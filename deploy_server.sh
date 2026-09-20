@@ -21,6 +21,11 @@ if [ ! -f .env ]; then
     cp .env.example .env
 fi
 
+# Pastikan URL production benar
+sed -i 's|^APP_URL=.*|APP_URL=https://absensi.stkip-us.ac.id|' .env
+sed -i 's|^APP_ENV=.*|APP_ENV=production|' .env
+sed -i 's|^APP_DEBUG=.*|APP_DEBUG=false|' .env
+
 # 3. Set Permission Folder Storage & Cache
 echo "🔒 Mengatur hak akses folder storage & bootstrap/cache..."
 chmod -R 775 storage bootstrap/cache
