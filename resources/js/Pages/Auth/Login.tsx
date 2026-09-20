@@ -49,8 +49,8 @@ export default function Login({ status }: LoginProps) {
         <>
             <Head title="Masuk - SiAbsen STKIP USMAN SAFRI" />
 
-            {/* 1 Layar Penuh di Desktop (Strict Lock Screen Height Tanpa Scrollbar/Geser) & Responsive di Mobile */}
-            <div className="relative min-h-screen lg:h-screen lg:overflow-hidden w-full flex items-center justify-center bg-slate-900 font-sans selection:bg-[#F28C28] selection:text-white py-6 px-4 sm:px-6">
+            {/* 1 Layar Penuh Eksak (100dvh Strict Lock Tanpa Scroll di Mobile & Desktop) */}
+            <div className="relative h-[100dvh] w-full flex items-center justify-center bg-slate-900 font-sans selection:bg-[#F28C28] selection:text-white px-3 sm:px-6 overflow-hidden">
                 {/* 1. HD Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat filter brightness-[0.98] contrast-[1.05]"
@@ -70,117 +70,117 @@ export default function Login({ status }: LoginProps) {
                 />
 
                 {/* 4. Ambient Vibrant Glow Spheres */}
-                <div className="absolute -top-32 -left-32 w-[26rem] h-[26rem] bg-[#F28C28]/25 rounded-full blur-[90px] pointer-events-none animate-pulse duration-10000" />
-                <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-[#0F2747]/60 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute -top-32 -left-32 w-72 h-72 bg-[#F28C28]/25 rounded-full blur-[80px] pointer-events-none animate-pulse duration-10000" />
+                <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-[#0F2747]/60 rounded-full blur-[90px] pointer-events-none" />
 
                 {/* Main Card Container */}
                 <div className="relative z-10 w-full max-w-sm sm:max-w-md my-auto">
-                    <div className="bg-white/95 backdrop-blur-2xl border border-white/90 rounded-3xl shadow-[0_20px_60px_-15px_rgba(15,39,71,0.35)] p-5 sm:p-7 transition-all duration-300">
+                    <div className="bg-white/95 backdrop-blur-2xl border border-white/90 rounded-2xl sm:rounded-3xl shadow-[0_20px_60px_-15px_rgba(15,39,71,0.35)] p-4 sm:p-7 transition-all duration-300">
 
                         {/* Header & Logo */}
-                        <div className="flex flex-col items-center text-center mb-4">
-                            <div className="relative mb-2 flex items-center justify-center">
+                        <div className="flex flex-col items-center text-center mb-3 sm:mb-4">
+                            <div className="relative mb-1.5 flex items-center justify-center">
                                 <img
                                     src="/logo.webp"
                                     alt="Logo STKIP Usman Safri"
-                                    className="h-14 w-auto max-w-[190px] object-contain hover:scale-105 transition-transform duration-300"
+                                    className="h-10 sm:h-14 w-auto max-w-[160px] sm:max-w-[190px] object-contain hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
 
-                            <div className="inline-block px-2.5 py-0.5 bg-[#F28C28]/10 text-[#F28C28] rounded-full text-[9px] font-bold tracking-wider uppercase mb-1">
+                            <div className="inline-block px-2.5 py-0.5 bg-[#F28C28]/10 text-[#F28C28] rounded-full text-[8px] sm:text-[9px] font-bold tracking-wider uppercase mb-1">
                                 Portal Presensi Resmi
                             </div>
 
-                            <h1 className="text-lg font-black tracking-tight text-[#0F2747]">
+                            <h1 className="text-base sm:text-lg font-black tracking-tight text-[#0F2747]">
                                 ABSENSI FUNGSIONAL
                             </h1>
-                            <p className="text-[11px] font-semibold tracking-wide text-slate-600">
+                            <p className="text-[10px] sm:text-[11px] font-semibold tracking-wide text-slate-600">
                                 STKIP USMAN SAFRI KUTACANE
                             </p>
                         </div>
 
                         {status && (
-                            <div className="mb-3 p-2.5 bg-emerald-50 border border-emerald-200 rounded-xl text-center text-xs font-semibold text-emerald-700 shadow-sm">
+                            <div className="mb-2 p-2 bg-emerald-50 border border-emerald-200 rounded-xl text-center text-[11px] font-semibold text-emerald-700 shadow-sm">
                                 {status}
                             </div>
                         )}
 
                         {/* Quick Account Selector Demo Buttons */}
-                        <div className="mb-4 p-2.5 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
+                        <div className="mb-3 p-2 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
                             <div className="flex items-center justify-between">
-                                <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider">
+                                <p className="text-[8px] sm:text-[9px] uppercase font-bold text-slate-400 tracking-wider">
                                     Pilih Akun Cepat (Demo)
                                 </p>
-                                <span className="text-[9px] text-slate-400 font-mono">pwd: password</span>
+                                <span className="text-[8px] sm:text-[9px] text-slate-400 font-mono">pwd: password</span>
                             </div>
-                            <div className="grid grid-cols-3 gap-1.5">
+                            <div className="grid grid-cols-3 gap-1">
                                 <button
                                     type="button"
                                     onClick={() => fillQuickAccount('admin@stkip-us.ac.id')}
-                                    className="px-2 py-1 rounded-lg bg-white border border-slate-200 hover:border-red-300 hover:bg-red-50/50 text-[10px] font-bold text-slate-700 transition flex flex-col items-center gap-0.5"
+                                    className="px-1.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-red-300 hover:bg-red-50/50 text-[10px] font-bold text-slate-700 transition flex flex-col items-center"
                                 >
-                                    <span className="text-red-600 text-[10px]">Admin</span>
+                                    <span className="text-red-600">Admin</span>
                                 </button>
                                 <button
                                     type="button"
                                     onClick={() => fillQuickAccount('dosen@stkip-us.ac.id')}
-                                    className="px-2 py-1 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 text-[10px] font-bold text-slate-700 transition flex flex-col items-center gap-0.5"
+                                    className="px-1.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 text-[10px] font-bold text-slate-700 transition flex flex-col items-center"
                                 >
-                                    <span className="text-[#0F2747] text-[10px]">Dosen</span>
+                                    <span className="text-[#0F2747]">Dosen</span>
                                 </button>
                                 <button
                                     type="button"
                                     onClick={() => fillQuickAccount('pegawai@stkip-us.ac.id')}
-                                    className="px-2 py-1 rounded-lg bg-white border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 text-[10px] font-bold text-slate-700 transition flex flex-col items-center gap-0.5"
+                                    className="px-1.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 text-[10px] font-bold text-slate-700 transition flex flex-col items-center"
                                 >
-                                    <span className="text-emerald-600 text-[10px]">Tendik</span>
+                                    <span className="text-emerald-600">Tendik</span>
                                 </button>
                             </div>
                         </div>
 
                         {/* Form Login */}
-                        <form onSubmit={submit} className="space-y-3">
+                        <form onSubmit={submit} className="space-y-2.5 sm:space-y-3">
                             {/* Input Email */}
                             <div>
-                                <InputLabel forInput="email" value="Alamat Email / NIDN / NIP" className="text-[#0F2747] font-semibold text-xs mb-1" />
+                                <InputLabel forInput="email" value="Alamat Email / NIDN / NIP" className="text-[#0F2747] font-semibold text-[11px] sm:text-xs mb-0.5 sm:mb-1" />
                                 <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                                        <Mail className="w-4 h-4" />
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                        <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                     </div>
                                     <TextInput
                                         id="email"
                                         type="email"
                                         name="email"
                                         value={data.email}
-                                        className="pl-10 w-full bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-[#0F2747] focus:ring-2 focus:ring-[#0F2747]/15 rounded-xl text-xs sm:text-sm transition-all duration-200 py-2 sm:py-2.5"
+                                        className="pl-9 sm:pl-10 w-full bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-[#0F2747] focus:ring-2 focus:ring-[#0F2747]/15 rounded-xl text-xs sm:text-sm transition-all duration-200 py-2 sm:py-2.5"
                                         placeholder="nama@stkip-us.ac.id"
                                         autoComplete="username"
                                         isFocused={true}
                                         handleChange={onHandleChange}
                                     />
                                 </div>
-                                <InputError message={errors.email} className="mt-1 text-xs text-rose-600 font-medium" />
+                                <InputError message={errors.email} className="mt-0.5 text-[10px] text-rose-600 font-medium" />
                             </div>
 
                             {/* Input Password */}
                             <div>
-                                <InputLabel forInput="password" value="Kata Sandi" className="text-[#0F2747] font-semibold text-xs mb-1" />
+                                <InputLabel forInput="password" value="Kata Sandi" className="text-[#0F2747] font-semibold text-[11px] sm:text-xs mb-0.5 sm:mb-1" />
                                 <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                                        <Lock className="w-4 h-4" />
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                        <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                     </div>
                                     <TextInput
                                         id="password"
                                         type="password"
                                         name="password"
                                         value={data.password}
-                                        className="pl-10 w-full bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-[#0F2747] focus:ring-2 focus:ring-[#0F2747]/15 rounded-xl text-xs sm:text-sm transition-all duration-200 py-2 sm:py-2.5"
+                                        className="pl-9 sm:pl-10 w-full bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-[#0F2747] focus:ring-2 focus:ring-[#0F2747]/15 rounded-xl text-xs sm:text-sm transition-all duration-200 py-2 sm:py-2.5"
                                         placeholder="••••••••"
                                         autoComplete="current-password"
                                         handleChange={onHandleChange}
                                     />
                                 </div>
-                                <InputError message={errors.password} className="mt-1 text-xs text-rose-600 font-medium" />
+                                <InputError message={errors.password} className="mt-0.5 text-[10px] text-rose-600 font-medium" />
                             </div>
 
                             {/* Remember Me */}
@@ -190,9 +190,9 @@ export default function Login({ status }: LoginProps) {
                                         name="remember"
                                         value={data.remember}
                                         handleChange={onHandleChange}
-                                        className="w-4 h-4 rounded border-slate-300 text-[#0F2747] focus:ring-[#0F2747]/30 bg-white"
+                                        className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded border-slate-300 text-[#0F2747] focus:ring-[#0F2747]/30 bg-white"
                                     />
-                                    <span className="ml-2 text-xs font-medium text-slate-600 group-hover:text-slate-800 transition-colors">
+                                    <span className="ml-2 text-[11px] sm:text-xs font-medium text-slate-600 group-hover:text-slate-800 transition-colors">
                                         Ingat sesi saya
                                     </span>
                                 </label>
@@ -203,20 +203,20 @@ export default function Login({ status }: LoginProps) {
                                 <button
                                     type="submit"
                                     disabled={processing}
-                                    className="w-full py-2.5 px-4 bg-[#0F2747] hover:bg-[#1c3656] active:bg-[#08172c] text-white font-semibold text-xs sm:text-sm rounded-xl shadow-lg shadow-[#0F2747]/25 hover:shadow-[#0F2747]/35 focus:outline-none focus:ring-2 focus:ring-[#F28C28] focus:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-2 group disabled:opacity-60 cursor-pointer"
+                                    className="w-full py-2 sm:py-2.5 px-4 bg-[#0F2747] hover:bg-[#1c3656] active:bg-[#08172c] text-white font-semibold text-xs sm:text-sm rounded-xl shadow-lg shadow-[#0F2747]/25 hover:shadow-[#0F2747]/35 focus:outline-none focus:ring-2 focus:ring-[#F28C28] focus:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-2 group disabled:opacity-60 cursor-pointer"
                                 >
                                     <span>{processing ? 'Memverifikasi...' : 'Masuk Sekarang'}</span>
-                                    <ArrowRight className="w-4 h-4 text-[#F28C28] group-hover:translate-x-1 transition-transform" />
+                                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F28C28] group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
                         </form>
 
                         {/* Footer Info */}
-                        <div className="mt-4 pt-3 border-t border-slate-100 flex flex-col items-center gap-0.5 text-center">
-                            <p className="text-[10px] font-medium text-slate-400">
+                        <div className="mt-3 pt-2 sm:mt-4 sm:pt-3 border-t border-slate-100 flex flex-col items-center gap-0.5 text-center">
+                            <p className="text-[9px] sm:text-[10px] font-medium text-slate-400">
                                 &copy; {new Date().getFullYear()} STKIP USMAN SAFRI
                             </p>
-                            <p className="text-[9px] text-slate-400">
+                            <p className="text-[8px] sm:text-[9px] text-slate-400">
                                 Sistem Informasi Presensi & Kehadiran Fungsional
                             </p>
                         </div>
