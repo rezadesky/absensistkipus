@@ -41,21 +41,27 @@ fi
 
 # 5. Pasang Composer Dependencies jika diperlukan
 if command -v composer &> /dev/null; then
-    echo "📦 Menjalankan composer install..."
-    composer install --optimize-autoloader --no-dev --no-interaction
+    echo "📦 Menjalankan composer dump-autoload..."
+    composer install --optimize-autoloader --no-dev --no-scripts --no-interaction
 fi
 
 # 6. Generate Application Key jika kosong
 echo "🔑 Memeriksa Application Key..."
 php artisan key:generate --force
 
-# 7. Migrasi Database dan Seeder
+# 7. Hubungkan Storage Link secara Native Bash (Bypass PHP symlink disable_functions)
+echo "📁 Menghubungkan storage link publik..."
+if [ ! -L "$PROJECT_DIR/public/storage" ]; then
+    rm -rf "$PROJECT_DIR/public/storage"
+    ln -s "$PROJECT_DIR/storage/app/public" "$PROJECT_DIR/public/storage"
+    echo "✅ Storage link berhasil dibuat via bash: $PROJECT_DIR/public/storage"
+else
+    echo "ℹ️ Storage link publik sudah terpasang."
+fi
+
+# 8. Migrasi Database dan Seeder
 echo "🗄️ Menjalankan database migration & seeder..."
 php artisan migrate --seed --force
-
-# 8. Hubungkan Storage Link (Lampiran Dokumen Izin)
-echo "📁 Menghubungkan storage link publik..."
-php artisan storage:link
 
 # 9. Optimalkan Cache Laravel Production
 echo "⚡ Mengoptimalkan cache sistem..."
