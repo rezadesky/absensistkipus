@@ -16,7 +16,16 @@
         "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://absensi-api.stkip-us.ac.id/api"
+        "EXPO_PUBLIC_API_URL": "https://absensi.stkip-us.ac.id/api"
+      }
+    },
+    "apk": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://absensi.stkip-us.ac.id/api"
       }
     },
     "production": {
@@ -24,7 +33,7 @@
         "buildType": "app-bundle"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://absensi-api.stkip-us.ac.id/api"
+        "EXPO_PUBLIC_API_URL": "https://absensi.stkip-us.ac.id/api"
       }
     }
   },
