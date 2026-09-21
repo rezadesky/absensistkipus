@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ChevronLeft } from 'lucide-react-native';
 import { COLORS, FONTS, SPACING } from '../../utils/theme';
 
@@ -18,8 +19,11 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
   onBack,
   rightAction,
 }) => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.header}>
+    <View style={[styles.header, { paddingTop: Math.max(insets.top, 12) + 6 }]}>
+
       <View style={styles.leftContainer}>
         {showBack && onBack ? (
           <TouchableOpacity

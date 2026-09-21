@@ -7,8 +7,10 @@ import {
   RefreshControl,
   TouchableOpacity,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuth } from '../../context/AuthContext';
 import { useAttendance } from '../../hooks/useAttendance';
+
 import { AttendanceStatusCard } from '../../components/attendance/AttendanceStatusCard';
 import { AppCard } from '../../components/common/AppCard';
 import { AppButton } from '../../components/common/AppButton';
@@ -29,6 +31,7 @@ import {
 } from 'lucide-react-native';
 
 export const StaffDashboardScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
+  const insets = useSafeAreaInsets();
   const { user } = useAuth();
   const {
     todayInfo,
@@ -75,7 +78,13 @@ export const StaffDashboardScreen: React.FC<{ navigation: any }> = ({ navigation
   return (
     <ScrollView
       style={styles.container}
-      contentContainerStyle={styles.scrollContent}
+      contentContainerStyle={[
+        styles.scrollContent,
+        {
+          paddingTop: Math.max(insets.top, 16) + SPACING.sm,
+          paddingBottom: Math.max(insets.bottom, 16) + SPACING.xxl,
+        },
+      ]}
       refreshControl={
         <RefreshControl
           refreshing={isLoading}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useAuth } from '../context/AuthContext';
@@ -47,8 +47,8 @@ function StaffTabNavigator() {
         tabBarStyle: {
           backgroundColor: Colors.surface,
           borderTopColor: Colors.border,
-          height: 60,
-          paddingBottom: 8,
+          height: Platform.OS === 'android' ? 66 : 60,
+          paddingBottom: Platform.OS === 'android' ? 10 : 8,
           paddingTop: 8,
         },
         tabBarLabelStyle: {
@@ -112,8 +112,8 @@ function LeadershipTabNavigator() {
         tabBarStyle: {
           backgroundColor: Colors.surface,
           borderTopColor: Colors.border,
-          height: 60,
-          paddingBottom: 8,
+          height: Platform.OS === 'android' ? 66 : 60,
+          paddingBottom: Platform.OS === 'android' ? 10 : 8,
           paddingTop: 8,
         },
         tabBarLabelStyle: {

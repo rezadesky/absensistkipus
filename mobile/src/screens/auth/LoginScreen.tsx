@@ -10,17 +10,20 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuth } from '../../context/AuthContext';
 import { AppButton } from '../../components/common/AppButton';
 import { COLORS, FONTS, RADIUS, SPACING } from '../../utils/theme';
 import { Lock, Mail, ShieldAlert, Sparkles } from 'lucide-react-native';
 
 export const LoginScreen: React.FC = () => {
+  const insets = useSafeAreaInsets();
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
 
   const handleLogin = async () => {
     if (!email.trim() || !password) {
@@ -51,7 +54,13 @@ export const LoginScreen: React.FC = () => {
       style={styles.container}
     >
       <ScrollView
-        contentContainerStyle={styles.scrollContainer}
+        contentContainerStyle={[
+          styles.scrollContainer,
+          {
+            paddingTop: Math.max(insets.top, 24) + SPACING.lg,
+            paddingBottom: Math.max(insets.bottom, 20) + SPACING.xl,
+          },
+        ]}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
