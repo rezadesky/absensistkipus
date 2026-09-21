@@ -14,7 +14,7 @@
 
 # Build outputs & caches
 /dist
-/*/dist
+!/admin/dist
 /build
 /*/build
 .expo/
