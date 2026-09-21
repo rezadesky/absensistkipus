@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $spaIndex = public_path('index.html');
+    if (file_exists($spaIndex)) {
+        return response()->file($spaIndex);
+    }
+    return response()->json([
+        'app' => 'STKIP Usman Safri Attendance System API',
+        'status' => 'active',
+        'version' => '1.0.0'
+    ]);
+});
+
+Route::fallback(function () {
+    $spaIndex = public_path('index.html');
+    if (file_exists($spaIndex)) {
+        return response()->file($spaIndex);
+    }
+    return response()->json(['message' => 'Resource not found'], 404);
 });
