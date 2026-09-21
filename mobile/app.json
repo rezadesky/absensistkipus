@@ -4,10 +4,10 @@
     "slug": "absensi-stkip-usman-safri",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.webp",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/logo.webp",
       "backgroundColor": "#172554",
       "resizeMode": "contain"
     },
@@ -20,9 +20,9 @@
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#172554",
-        "foregroundImage": "./assets/android-icon-foreground.png",
+        "foregroundImage": "./assets/logo.webp",
         "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "monochromeImage": "./assets/logo.webp"
       },
       "permissions": [
         "INTERNET",
@@ -31,7 +31,7 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.webp"
     },
     "extra": {
       "eas": {
