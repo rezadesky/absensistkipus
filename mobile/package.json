@@ -6,7 +6,7 @@
   "main": "index.ts",
   "dependencies": {
     "@expo-google-fonts/onest": "^0.4.2",
-    "@react-native-async-storage/async-storage": "^3.1.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "@react-navigation/bottom-tabs": "^7.19.2",
     "@react-navigation/native": "^7.4.1",
     "@react-navigation/native-stack": "^7.19.2",
@@ -20,13 +20,14 @@
     "react": "19.2.3",
     "react-dom": "^19.2.3",
     "react-native": "0.86.3",
-    "react-native-safe-area-context": "^5.10.0",
-    "react-native-screens": "^4.28.0",
-    "react-native-svg": "^15.15.5",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-svg": "15.15.4",
     "react-native-web": "^0.21.2"
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "eas-cli": "^24.7.0",
     "typescript": "~6.0.3"
   },
   "scripts": {

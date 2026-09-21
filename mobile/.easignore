@@ -1,0 +1,8 @@
+# Ignore parent/sibling directories from mobile build
+../backend
+../admin
+../.git
+node_modules
+.expo
+dist
+build
