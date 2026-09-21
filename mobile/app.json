@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Absensi STKIP Usman Safri",
+    "slug": "absensi-stkip-usman-safri",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "backgroundColor": "#172554",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stkipusmansafri.absensi"
+    },
+    "android": {
+      "package": "com.stkipusmansafri.absensi",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#172554",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

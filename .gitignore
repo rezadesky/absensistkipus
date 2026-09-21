@@ -1,15 +1,50 @@
+# Dependencies
 /node_modules
-/public/hot
-/public/storage
-/storage/*.key
+/*/node_modules
 /vendor
+/*/vendor
+
+# Environment Variables
 .env
 .env.backup
-.phpunit.result.cache
-docker-compose.override.yml
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-/.idea
-/.vscode
+.env.production
+*/.env
+*/.env.backup
+*/.env.production
+
+# Build outputs & caches
+/dist
+/*/dist
+/build
+/*/build
+.expo/
+*/.expo/
+.expo-shared/
+*/.expo-shared/
+web-build/
+*/web-build/
+
+# Logs & temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+/backend/storage/*.key
+/backend/storage/logs/*.log
+/backend/storage/framework/cache/data/*
+/backend/storage/framework/sessions/*
+/backend/storage/framework/views/*
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Generated
+.DS_Store
+Thumbs.db
